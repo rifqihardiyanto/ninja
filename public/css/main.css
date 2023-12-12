@@ -1,0 +1,301 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+:root {
+    /* Base font size */
+    font-size: 10px;
+
+    /* Heading height variable*/
+    --heading-height: 30em;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #101010;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: var(--heading-height);
+}
+
+/* Create angled background with 'before' pseudo-element */
+header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 6em;
+    width: 100%;
+    height: calc(var(--heading-height) + 10em);
+    z-index: -1;
+    transform: skewY(-3.5deg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80)
+            no-repeat center,
+        linear-gradient(#4e4376, #2b5876);
+    background-size: cover;
+    border-bottom: 0.2em solid #fff;
+}
+
+h1 {
+    font-size: calc(2.8em + 2.6vw);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding: 1rem 0 0 1rem;
+    text-shadow: 0.022em 0.022em 0.022em #111;
+    color: #fff;
+
+}
+
+.message {
+    font-size: calc(1.5em + 0.25vw);
+    font-weight: 4000;
+    line-height: 1.5;
+    margin-bottom: 3em;
+    color: rgb(0, 212, 0);
+    font-weight: 300;
+    text-align: center;
+}
+
+main {
+    padding: calc(var(--heading-height) + 1.5vw) 4em 0;
+}
+
+.search-container {
+    margin-top: 3em;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lato" !important;
+}
+
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+.input-search {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+    background-color: #b9b9b9;
+    padding-right: 40px;
+    color: #000000;
+}
+.input-search::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+.btn-search {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: #919191;
+    background-color: transparent;
+    pointer-events: painted;
+}
+.btn-search:focus ~ .input-search {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input-search:focus {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+p {
+    font-size: calc(1.5em + 0.25vw);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    color: #fcfcfc;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
+a {
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+a,
+a:hover {
+    text-decoration: none !important;
+}
+
+.content {
+    padding: 7rem 0;
+}
+
+.custom-table {
+    min-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.custom-table thead tr,
+.custom-table thead th {
+    padding-bottom: 30px;
+    border-top: none;
+    border-bottom: none !important;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+.custom-table tbody th,
+.custom-table tbody td {
+    color: #777;
+    font-weight: 400;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 300;
+    border: none;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+.custom-table tbody th small,
+.custom-table tbody td small {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+.custom-table tbody th a,
+.custom-table tbody td a {
+    color: rgba(255, 255, 255, 0.3);
+}
+.custom-table tbody th .more,
+.custom-table tbody td .more {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+.custom-table tbody tr {
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+.custom-table tbody tr:hover td,
+.custom-table tbody tr:focus td {
+    color: #fff;
+}
+.custom-table tbody tr:hover td a,
+.custom-table tbody tr:focus td a {
+    color: #fdd114;
+}
+.custom-table tbody tr:hover td .more,
+.custom-table tbody tr:focus td .more {
+    color: #fdd114;
+}
+.custom-table .td-box-wrap {
+    padding: 0;
+}
+.custom-table .box {
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.custom-table .box td,
+.custom-table .box th {
+    border: none !important;
+}
+
+.custom-table {
+    min-width: 900px;
+}
+.custom-table thead tr,
+.custom-table thead th {
+    padding-bottom: 30px;
+    border-top: none;
+    border-bottom: none !important;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+.custom-table tbody th,
+.custom-table tbody td {
+    color: #777;
+    font-weight: 400;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 300;
+    border: none;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+.custom-table tbody td {
+    padding-bottom: 30px;
+    border-top: none;
+    border-bottom: none !important;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.custom-table tbody tr {
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+tr:focus td .more {
+    color: #fdd114;
+}
+.custom-table .td-box-wrap {
+    padding: 0;
+}
+.custom-table .box {
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.custom-table .box td,
+.custom-table .box th {
+    border: none !important;
+}
+
+table, th, td, tr {
+    border: solid;
+    border-color: #fff;
+    text-align: center;
+  }
